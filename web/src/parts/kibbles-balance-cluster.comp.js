@@ -13,12 +13,12 @@ export function KibblesBalanceCluster({address}) {
 
   return (
     <Bar>
-      <Label>Kibbles Balance:</Label>
+      <Label>HTY数量:</Label>
       <Label strong good={kibble.balance > 0} bad={kibble.balance <= 0}>
         {fmtKibbles(kibble.balance)}
       </Label>
       <Button disabled={kibble.status !== IDLE} onClick={kibble.refresh}>
-        Refresh
+        刷新
       </Button>
       <Button disabled={kibble.status !== IDLE} onClick={kibble.mint}>
         Mint

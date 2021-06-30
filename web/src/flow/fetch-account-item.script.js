@@ -8,12 +8,19 @@ import KittyItems from 0xKittyItems
 
 pub struct AccountItem {
   pub let itemID: UInt64
-  pub let typeID: UInt64
+  pub let typeID: UInt64        
+  pub let introduction :String
+  pub let attribute :String
+  pub let url :String 
+
   pub let owner: Address
 
-  init(itemID: UInt64, typeID: UInt64, owner: Address) {
+  init(itemID: UInt64, typeID: UInt64,introduction :String,attribute :String,url :String , owner: Address) {
     self.itemID = itemID
     self.typeID = typeID
+    self.introduction = introduction
+    self.attribute = attribute
+    self.url = url
     self.owner = owner
   }
 }
@@ -21,7 +28,7 @@ pub struct AccountItem {
 pub fun fetch(address: Address, id: UInt64): AccountItem? {
   if let col = getAccount(address).getCapability<&KittyItems.Collection{NonFungibleToken.CollectionPublic, KittyItems.KittyItemsCollectionPublic}>(KittyItems.CollectionPublicPath).borrow() {
     if let item = col.borrowKittyItem(id: id) {
-      return AccountItem(itemID: id, typeID: item.typeID, owner: address)
+      return AccountItem(itemID: id, typeID: item.typeID,introduction:item.introduction,attribute:item.attribute,url:item.url, owner: address)
     }
   }
 

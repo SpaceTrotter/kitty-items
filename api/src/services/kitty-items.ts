@@ -40,7 +40,7 @@ class KittyItemsService {
     });
   };
 
-  mint = async (recipient: string, typeID: number) => {
+  mint = async (recipient: string, typeID: string,introduction:string,attribute: string,url: string) => {
     const authorization = this.flowService.authorizeMinter();
 
     const transaction = fs
@@ -56,14 +56,14 @@ class KittyItemsService {
         fcl.withPrefix(this.nonFungibleTokenAddress)
       )
       .replace(kittyItemsPath, fcl.withPrefix(this.kittyItemsAddress));
-
-    return this.flowService.sendTx({
+    var result = this.flowService.sendTx({
       transaction,
-      args: [fcl.arg(recipient, t.Address), fcl.arg(typeID, t.UInt64)],
+      args: [fcl.arg(recipient, t.Address), fcl.arg(Number(typeID), t.UInt64),fcl.arg(introduction, t.String), fcl.arg(attribute, t.String), fcl.arg(url,t.String)],
       authorizations: [authorization],
       payer: authorization,
       proposer: authorization,
     });
+    return result
   };
 
   transfer = async (recipient: string, itemID: number) => {

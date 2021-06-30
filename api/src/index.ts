@@ -53,7 +53,11 @@ async function run() {
 
   // Make sure we're pointing to the correct Flow Access API.
   fcl.config().put("accessNode.api", config.accessApi);
-
+  //fcl.config()
+  // Point App at Emulator
+  //.put("accessNode.api", "http://localhost:8080")
+  // Point FCL Wallet Discovuer at Dev Wallet
+  //.put("discovery.wallet", "http://localhost:3000/fcl/authn") // with default port configuration
   const startWorker = () => {
     const blockCursorService = new BlockCursorService();
 

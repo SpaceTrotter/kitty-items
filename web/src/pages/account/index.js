@@ -1,4 +1,4 @@
-import {Suspense} from "react"
+import {Suspense,useRef} from "react"
 import {Base} from "../../parts/base.comp"
 import {IDLE} from "../../global/constants"
 import {useAddress} from "../../hooks/use-url-address.hook"
@@ -31,6 +31,16 @@ import {
   Button,
   HStack,
   Image,
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  AlertDialogCloseButton,
+  useDisclosure,
+  Input,
+  useState,
 } from "@chakra-ui/react"
 
 import Cookie from "../../svg/cookie.svg"
@@ -54,14 +64,91 @@ export function StoreItemsCount() {
   const l = items?.ids?.length ?? 0
   return l > 0 ? <Tag ml="1">{l}</Tag> : null
 }
-
+var str1 = ''
+var str2 = ''
+var str3 = ''
+var str4 =''
+var itemsvar = ''
+function change1(e){
+  str1 = e.target.value
+}
+function change2(e){
+  str2 = e.target.value
+}
+function change3(e){
+  str3 = e.target.value
+}
+function change4(e){
+  str4 = e.target.value
+}
+function change5(e){
+  itemsvar.mint(str1,str2,str3,str4)
+  console.log(str1,str2,str3,str4)
+}
 export function MintButton({address}) {
   const items = useAccountItems(address)
+  itemsvar = items
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const cancelRef = useRef()
+  
 
   return (
-    <Button disabled={items.status !== IDLE} onClick={items.mint}>
-      Mint Item
-    </Button>
+    <>
+      <Button disabled={items.status !== IDLE} onClick={onOpen}>
+        Mint Item
+      </Button>
+      <AlertDialog
+        motionPreset="slideInBottom"
+        leastDestructiveRef={cancelRef}
+        onClose={onClose}
+        isOpen={isOpen}
+        
+        isCentered
+      >
+        <AlertDialogOverlay />
+
+        <AlertDialogContent>
+          <AlertDialogHeader>Discard Changes?</AlertDialogHeader>
+          <AlertDialogCloseButton />
+          <AlertDialogBody>
+            Are you sure you want to discard all of your notes? 44 words will be
+            deleted.
+            <Input
+              placeholder="输入id"
+              size="sm"
+              onChange= {change1}
+            />    
+            <Input
+
+              placeholder="输入简介"
+              size="sm"
+              onChange= {change2}
+            />               
+            <Input
+
+              placeholder="输入属性"
+              size="sm"
+              onChange= {change3}
+            />   
+            <Input
+
+              placeholder="输入url"
+              size="sm"
+              onChange= {change4}
+            />         
+              
+          </AlertDialogBody>
+          <AlertDialogFooter>
+            <Button ref={cancelRef} onClick={onClose}>
+              No
+            </Button>
+            <Button colorScheme="red"  onClick={()=>{change5();onClose()}}>
+              Yes
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
   )
 }
 
@@ -73,14 +160,14 @@ export function InfoBanner({address}) {
   const status = {
     notInitialized: {
       type: "info",
-      title: "Initialize Your Account",
+      title: "初始化您的账户",
       text:
-        "You need to initialize your account before you can receive Kibble.",
+        "需要初始化才能使用.",
     },
     noKibble: {
       type: "info",
-      title: "Get Kibble",
-      text: "You need Kibble to buy Kitty Items.",
+      title: "获取HTY",
+      text: "您需要HTY购买NFT",
     },
   }
 
@@ -118,7 +205,7 @@ export function Page() {
         <Flex mb="4">
           <Center>
             <Text mr="4" fontSize="2xl" color="purple.500">
-              Account:{" "}
+              地址:{" "}
               <Text display="inline" color="black" fontWeight="bold">
                 {address}
               </Text>
@@ -142,7 +229,7 @@ export function Page() {
           <Box ml="4">
             <BalanceCluster address={address} />
           </Box>
-          {cu.addr === address && (
+          {cu.addr === address &&(
             <Box ml="4">
               <Suspense fallback={null}>
                 <MintButton address={address} />
@@ -155,7 +242,7 @@ export function Page() {
             <Tab fontSize="2xl">
               <HStack>
                 <Image src={BackPack} />
-                <Box>{cu.addr === address ? "My" : "User"} Items</Box>
+                <Box>{cu.addr === address ? "我的" : "User"} NFT</Box>
               </HStack>
               <Suspense fallback={null}>
                 <AccountItemsCount address={address} />
@@ -164,7 +251,7 @@ export function Page() {
             <Tab fontSize="2xl">
               <HStack>
                 <Image src={Cookie} />
-                <Box>Items Marketplace</Box>
+                <Box>市场</Box>
               </HStack>
               <Suspense fallback={null}>
                 <MarketItemsCount />

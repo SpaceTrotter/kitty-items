@@ -16,7 +16,7 @@ const CODE = fcl.cdc`
 
     prepare(signer: AuthAccount) {
         // we need a provider capability, but one is not provided by default so we create one.
-        let KittyItemsCollectionProviderPrivatePath = /private/kittyItemsCollectionProvider
+        let KittyItemsCollectionProviderPrivatePath = /private/kittyItemsCollectionProvider4
 
         self.kibbleVault = signer.getCapability<&Kibble.Vault{FungibleToken.Receiver}>(Kibble.ReceiverPublicPath)!
         assert(self.kibbleVault.borrow() != nil, message: "Missing or mis-typed Kibble receiver")
@@ -37,6 +37,9 @@ const CODE = fcl.cdc`
             sellerItemProvider: self.kittyItemsCollection,
             itemID: itemID,
             typeID: self.kittyItemsCollection.borrow()!.borrowKittyItem(id: itemID)!.typeID,
+            introduction:self.kittyItemsCollection.borrow()!.borrowKittyItem(id: itemID)!.introduction,
+            attribute:self.kittyItemsCollection.borrow()!.borrowKittyItem(id: itemID)!.attribute,
+            url:self.kittyItemsCollection.borrow()!.borrowKittyItem(id: itemID)!.url,
             sellerPaymentReceiver: self.kibbleVault,
             price: price
         )
@@ -56,7 +59,7 @@ export function createSaleOffer({itemID, price}, opts = {}) {
     fcl.transaction(CODE),
     fcl.args([
       fcl.arg(Number(itemID), t.UInt64),
-      fcl.arg(String(price), t.UFix64),
+      fcl.arg(price.toFixed(8).toString(), t.UFix64),
     ]),
     fcl.proposer(fcl.authz),
     fcl.payer(fcl.authz),

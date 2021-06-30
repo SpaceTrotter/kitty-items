@@ -86,6 +86,7 @@ export function useMarketItem(address, id) {
             setStatus(IDLE)
           },
           async onError(error) {
+            console.log('error cancel')
             // TODO: Handle error
           },
         }

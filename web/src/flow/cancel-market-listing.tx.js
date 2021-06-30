@@ -2,8 +2,8 @@ import * as fcl from "@onflow/fcl"
 import * as t from "@onflow/types"
 import {tx} from "./util/tx"
 import {invariant} from "@onflow/util-invariant"
-
-const CODE = fcl.cdc`
+const CODE = fcl.cdc
+`
   import KittyItemsMarket from 0xKittyItemsMarket
 
   transaction(itemID: UInt64) {
@@ -19,7 +19,7 @@ const CODE = fcl.cdc`
 // prettier-ignore
 export function cancelMarketListing({ itemID }, opts = {}) {
   invariant(itemID != null, "cancelMarketListing({itemID}) -- itemID required")
-
+  console.log('canceling')
   return tx([
     fcl.transaction(CODE),
     fcl.args([

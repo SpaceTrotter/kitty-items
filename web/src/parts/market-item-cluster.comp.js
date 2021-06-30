@@ -11,6 +11,7 @@ import {
   Center,
   Text,
   HStack,
+  Link
 } from "@chakra-ui/react"
 
 import {ItemImage} from "./account-item-cluster.comp"
@@ -23,15 +24,18 @@ export function MarketItemCluster({address, id}) {
 
   return (
     <Tr>
+      <Td>
+        <Link href={'https://'+item.url} isExternal>
+          <ItemImage typeID={item.typeID} />
+        </Link>
+      </Td>      
       <Td maxW="50px">
         <Flex>
-          <Text>#{item.itemID}</Text>
+          <Text as={item.forSale && "del"}>#{item.typeID}</Text>
         </Flex>
       </Td>
-      <Td>({item.typeID})</Td>
-      <Td>
-        <ItemImage typeID={item.typeID} />
-      </Td>
+      <Td>({item.introduction})</Td>
+      <Td>({item.attribute})</Td>
       <Td>{item.price}</Td>
       {loggedIn && (
         <>

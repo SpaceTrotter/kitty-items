@@ -10,7 +10,7 @@ pub contract KittyItems: NonFungibleToken {
     pub event ContractInitialized()
     pub event Withdraw(id: UInt64, from: Address?)
     pub event Deposit(id: UInt64, to: Address?)
-    pub event Minted(id: UInt64, typeID: UInt64)
+    pub event Minted(id: UInt64, typeID: UInt64,introduction:String,attribute:String,url:String)
 
     // Named Paths
     //
@@ -31,12 +31,17 @@ pub contract KittyItems: NonFungibleToken {
         pub let id: UInt64
         // The token's type, e.g. 3 == Hat
         pub let typeID: UInt64
-
+        pub let attribute: String
+        pub let introduction:String
+        pub let url: String
         // initializer
         //
-        init(initID: UInt64, initTypeID: UInt64) {
+        init(initID: UInt64, initTypeID: UInt64,introduction:String,attribute:String,url:String) {
             self.id = initID
             self.typeID = initTypeID
+            self.attribute = attribute
+            self.introduction = introduction
+            self.url = url
         }
     }
 
@@ -152,11 +157,11 @@ pub contract KittyItems: NonFungibleToken {
         // Mints a new NFT with a new ID
 		// and deposit it in the recipients collection using their collection reference
         //
-		pub fun mintNFT(recipient: &{NonFungibleToken.CollectionPublic}, typeID: UInt64) {
-            emit Minted(id: KittyItems.totalSupply, typeID: typeID)
+		pub fun mintNFT(recipient: &{NonFungibleToken.CollectionPublic}, typeID: UInt64,introduction:String,attribute:String,url:String) {
+            emit Minted(id: KittyItems.totalSupply, typeID: typeID,introduction:introduction,attribute:attribute,url:url)
 
 			// deposit it in the recipient's account using their reference
-			recipient.deposit(token: <-create KittyItems.NFT(initID: KittyItems.totalSupply, initTypeID: typeID))
+			recipient.deposit(token: <-create KittyItems.NFT(initID: KittyItems.totalSupply, initTypeID: typeID,introduction:introduction,attribute:attribute,url:url))
 
             KittyItems.totalSupply = KittyItems.totalSupply + (1 as UInt64)
 		}
@@ -182,9 +187,10 @@ pub contract KittyItems: NonFungibleToken {
     //
 	init() {
         // Set our named paths
-        self.CollectionStoragePath = /storage/kittyItemsCollection
-        self.CollectionPublicPath = /public/kittyItemsCollection
-        self.MinterStoragePath = /storage/kittyItemsMinter
+        self.CollectionStoragePath = /storage/HTYNFTCollection008
+        self.CollectionPublicPath = /public/HTYNFTCollection008
+        self.MinterStoragePath = /storage/HTYNFTMinter008
+
 
         // Initialize the total supply
         self.totalSupply = 0

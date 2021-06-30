@@ -26,7 +26,7 @@ export function Page() {
           <Center mr="4">
             <HStack>
               <Image src={Logo} />
-              <Heading size="lg">Kitty Items</Heading>
+              <Heading size="lg">和田玉2.0NFT</Heading>
             </HStack>
           </Center>
           <Spacer />

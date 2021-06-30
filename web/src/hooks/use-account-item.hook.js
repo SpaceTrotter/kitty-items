@@ -4,9 +4,10 @@ import {useCurrentUser} from "../hooks/use-current-user.hook"
 import {fetchAccountItem} from "../flow/fetch-account-item.script"
 import {createSaleOffer} from "../flow/create-sale-offer.tx"
 import {IDLE, PROCESSING} from "../global/constants"
-import {useAccountItems} from "../hooks/use-account-items.hook"
+import {useAccountItems,globalsetItems} from "../hooks/use-account-items.hook"
 import {useMarketItems} from "../hooks/use-market-items.hook"
-
+import {transfor_kittyitem} from "../flow/transfor_kittyitem.tx"
+import {fetchAccountItems} from "../flow/fetch-account-items.script"
 function expand(key) {
   return key.split("|")
 }
@@ -63,6 +64,13 @@ export function useAccountItem(address, id) {
     async refresh() {
       setStatus(PROCESSING)
       await fetchAccountItem(...expand(key)).then(setItem)
+      setStatus(IDLE)
+    },
+    async send(Address,itemid) {
+      console.log('insend')
+      setStatus(PROCESSING)
+      await transfor_kittyitem(Address,itemid)
+      await fetchAccountItems(address).then(globalsetItems)
       setStatus(IDLE)
     },
   }

@@ -8,11 +8,11 @@ function initKittyItemsRouter(kittyItemsService: KittyItemsService): Router {
 
   router.post(
     "/kitty-items/mint",
-    [body("recipient").exists(), body("typeID").isInt()],
+    [body("recipient").exists(), body("typeID").isString(),body("introduction").isString(), body("attribute").isString(), body("url").isString()],
     validateRequest,
     async (req: Request, res: Response) => {
-      const { recipient, typeID } = req.body;
-      const tx = await kittyItemsService.mint(recipient, typeID);
+      const { recipient, typeID,introduction ,attribute,url} = req.body;
+      const tx = await kittyItemsService.mint(recipient, typeID,introduction,attribute,url);
       return res.send({
         transaction: tx,
       });

@@ -87,12 +87,13 @@ class KibblesService {
   };
 
   transfer = async (recipient: string, amount: number) => {
+    console.info('in transfer')    
     const authorization = this.flowService.authorizeMinter();
     const transaction = fs
       .readFileSync(
         path.join(
           __dirname,
-          "../../../cadence/transactions/kibble/burn_tokens.cdc"
+          "../../../cadence/transactions/kibble/transfer_tokens.cdc"
         ),
         "utf8"
       )

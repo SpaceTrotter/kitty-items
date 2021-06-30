@@ -75,9 +75,17 @@
       "description": "RESTful endpoint for minting Kibble (Fungible Token).",
       "value": "/v1/kibbles/mint"
     },
+    "REACT_APP_API_KIBBLE_TRANSFER": {
+      "description": "RESTful endpoint for transfer Kibble (Fungible Token).",
+      "value": "/v1/kibbles/transfer"
+    },
     "REACT_APP_API_KITTY_ITEM_MINT": {
       "description": "RESTful endpoint for minting Kitty Items (Non-Fungible Token).",
       "value": "/v1/kitty-items/mint"
+    },
+    "REACT_APP_API_KITTY_ITEM_TRANSFER": {
+      "description": "RESTful endpoint for transfer Kitty Items (Non-Fungible Token).",
+      "value": "/v1/kitty-items/transfer"
     },
     "REACT_APP_API_MARKET_ITEMS_LIST": {
       "description": "RESTful endpoint for reading the latest marketplace SaleOffers.",

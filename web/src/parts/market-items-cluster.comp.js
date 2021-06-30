@@ -18,10 +18,11 @@ export function MarketItemsCluster() {
       <Table size="sm">
         <Thead>
           <Tr>
-            <Th>Id</Th>
-            <Th>Type</Th>
-            <Th>Image</Th>
-            <Th>Price</Th>
+            <Th>图片</Th>
+            <Th>id</Th>
+            <Th>简介</Th>
+            <Th>属性</Th>
+            <Th>价格</Th>
           </Tr>
         </Thead>
         <Tbody>

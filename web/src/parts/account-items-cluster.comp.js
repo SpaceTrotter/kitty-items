@@ -12,19 +12,21 @@ export function AccountItemsCluster({address}) {
 
   if (items.ids.length <= 0)
     return (
-      <Box borderWidth="1px" borderRadius="lg" p="4">
-        <Text>No Items</Text>
+      <Box borderWidth="2px" borderRadius="lg" p="4">
+        <Text>空</Text>
       </Box>
     )
 
   return (
     <Box borderWidth="1px" borderRadius="lg">
-      <Table size="sm">
+      <Table size="lg">
+        
         <Thead>
           <Tr>
-            <Th>Id</Th>
-            <Th>Type</Th>
-            <Th>Image</Th>
+            <Th>图片</Th>
+            <Th>id</Th>
+            <Th>简介</Th>
+            <Th>属性</Th>
             {cu.addr === address && <Th />}
           </Tr>
         </Thead>

@@ -29,7 +29,7 @@ export function InitCluster({address}) {
       <Box mb="2">
         <Flex>
           <Heading size="md" mr="4">
-            Account Initialized?
+            账户初始化
           </Heading>
           {init.status !== IDLE && (
             <Center>
@@ -42,15 +42,15 @@ export function InitCluster({address}) {
         <Table size="sm">
           <Tbody>
             <Tr>
-              <Td>Kibble</Td>
+              <Td>HTY</Td>
               <Td>{fmtBool(init.Kibble)}</Td>
             </Tr>
             <Tr>
-              <Td>Kitty Items</Td>
+              <Td>NFT</Td>
               <Td>{fmtBool(init.KittyItems)}</Td>
             </Tr>
             <Tr>
-              <Td>Kitty Items Market</Td>
+              <Td>市场</Td>
               <Td>{fmtBool(init.KittyItemsMarket)}</Td>
             </Tr>
           </Tbody>
@@ -83,7 +83,7 @@ export default function WrappedInitCluster(props) {
         <Box mb="2">
           <Flex>
             <Heading size="md" mr="4">
-              Account Initialized?
+              初始化状态
             </Heading>
             <Center>
               <Spinner size="sm" />

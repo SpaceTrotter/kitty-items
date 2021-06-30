@@ -10,4 +10,4 @@ export API_URL=http://localhost:3000
 export ACCESS_NODE=https://access-testnet.onflow.org
 export WALLET_DISCOVERY=https://fcl-discovery.onflow.org/testnet/authn
 
-lerna run testnet --parallel
+lerna run testnet --parallel --concurrency 4 

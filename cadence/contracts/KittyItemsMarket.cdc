@@ -46,6 +46,9 @@ pub contract KittyItemsMarket {
     pub event CollectionInsertedSaleOffer(
       itemID: UInt64, 
       typeID: UInt64, 
+      introduction:String,
+      attribute:String,
+      url:String,
       owner: Address, 
       price: UFix64
     )
@@ -61,6 +64,9 @@ pub contract KittyItemsMarket {
     pub resource interface SaleOfferPublicView {
         pub let itemID: UInt64
         pub let typeID: UInt64
+        pub let introduction:String
+        pub let attribute:String
+        pub let url:String
         pub let price: UFix64
     }
 
@@ -76,6 +82,12 @@ pub contract KittyItemsMarket {
 
         // The 'type' of NFT
         pub let typeID: UInt64
+        
+        pub let introduction :String
+
+        pub let attribute:String
+
+        pub let url:String
 
         // The sale payment price.
         pub let price: UFix64
@@ -124,6 +136,9 @@ pub contract KittyItemsMarket {
             sellerItemProvider: Capability<&KittyItems.Collection{NonFungibleToken.Provider, KittyItems.KittyItemsCollectionPublic}>,
             itemID: UInt64,
             typeID: UInt64,
+            introduction:String,
+            attribute:String,
+            url:String,
             sellerPaymentReceiver: Capability<&Kibble.Vault{FungibleToken.Receiver}>,
             price: UFix64
         ) {
@@ -146,7 +161,9 @@ pub contract KittyItemsMarket {
             self.sellerPaymentReceiver = sellerPaymentReceiver
             self.price = price
             self.typeID = typeID
-
+            self.introduction = introduction
+            self.attribute = attribute
+            self.url = url
             emit SaleOfferCreated(itemID: self.itemID, price: self.price)
         }
     }
@@ -158,6 +175,9 @@ pub contract KittyItemsMarket {
         sellerItemProvider: Capability<&KittyItems.Collection{NonFungibleToken.Provider, KittyItems.KittyItemsCollectionPublic}>,
         itemID: UInt64,
         typeID: UInt64,
+        introduction :String,
+        attribute :String,
+        url :String,
         sellerPaymentReceiver: Capability<&Kibble.Vault{FungibleToken.Receiver}>,
         price: UFix64
     ): @SaleOffer {
@@ -165,6 +185,9 @@ pub contract KittyItemsMarket {
             sellerItemProvider: sellerItemProvider,
             itemID: itemID,
             typeID: typeID,
+            introduction :introduction,
+            attribute :attribute,
+            url :url,
             sellerPaymentReceiver: sellerPaymentReceiver,
             price: price
         )
@@ -217,6 +240,9 @@ pub contract KittyItemsMarket {
          pub fun insert(offer: @KittyItemsMarket.SaleOffer) {
             let itemID: UInt64 = offer.itemID
             let typeID: UInt64 = offer.typeID
+            let introduction:String = offer.introduction
+            let attribute:String = offer.attribute
+            let url :String = offer.url
             let price: UFix64 = offer.price
 
             // add the new offer to the dictionary which removes the old one
@@ -226,6 +252,9 @@ pub contract KittyItemsMarket {
             emit CollectionInsertedSaleOffer(
               itemID: itemID,
               typeID: typeID,
+              introduction:introduction,
+              attribute:attribute,
+              url:url,
               owner: self.owner?.address!,
               price: price
             )
@@ -305,7 +334,7 @@ pub contract KittyItemsMarket {
 
     init () {
         //FIXME: REMOVE SUFFIX BEFORE RELEASE
-        self.CollectionStoragePath = /storage/kittyItemsMarketCollection002
-        self.CollectionPublicPath = /public/kittyItemsMarketCollection002
+        self.CollectionStoragePath = /storage/HTYNFTMarketCollection008
+        self.CollectionPublicPath = /public/HTYNFTMarketCollection008
     }
 }

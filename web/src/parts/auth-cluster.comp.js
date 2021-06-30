@@ -14,7 +14,7 @@ import {
   Image,
 } from "@chakra-ui/react"
 
-import Logo from "../svg/logo-kv.svg"
+import Logo from "../svg/logosmallsmall.png"
 
 export function AuthCluster() {
   const [user, loggedIn, {signUp, logIn, logOut}] = useCurrentUser()
@@ -24,7 +24,7 @@ export function AuthCluster() {
       <Flex>
         <HStack>
           <Image src={Logo} />
-          <Heading size="lg">Kitty Items</Heading>
+          <Heading size="lg">和田玉2.0NFT</Heading>
         </HStack>
         <Spacer />
         <Center>
@@ -34,7 +34,7 @@ export function AuthCluster() {
         </Center>
         <Box>
           <Button mr="4" colorScheme="blue" onClick={logOut}>
-            Log Out
+            登出
           </Button>
         </Box>
       </Flex>
@@ -45,16 +45,16 @@ export function AuthCluster() {
         <Box p="2">
           <HStack>
             <Image src={Logo} />
-            <Heading size="lg">Kitty Items</Heading>
+            <Heading size="lg">和田玉2.0NFT</Heading>
           </HStack>
         </Box>
         <Spacer />
         <Box>
           <Button mr="4" colorScheme="blue" onClick={logIn}>
-            Log In
+            登录
           </Button>
           <Button mr="4" colorScheme="blue" onClick={signUp}>
-            Sign Up
+            注册
           </Button>
         </Box>
       </Flex>

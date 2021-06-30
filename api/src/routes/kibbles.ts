@@ -54,6 +54,7 @@ function initKibblesRouter(kibblesService: KibblesService): Router {
     ],
     validateRequest,
     async (req: Request, res: Response) => {
+      console.log('transfoerin')
       const { recipient, amount } = req.body;
       const transaction = await kibblesService.transfer(recipient, amount);
       return res.send({
