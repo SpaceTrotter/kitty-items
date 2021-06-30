@@ -7,7 +7,8 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "start": "./scripts/run-testnet.sh",
+    "start": "lerna run testnet --parallel --concurrency 4",
+    "startt": "./scripts/run-testnet.sh",
     "start:dev": "./scripts/run-local.sh",
     "start:testnet": "./scripts/run-testnet.sh",
     "setup-minter": "./scripts/setup-minter.sh"
