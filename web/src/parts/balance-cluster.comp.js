@@ -85,6 +85,7 @@ export function BalanceCluster({address}) {
       </Box>
       <Box mt="2">
         <Flex>
+          {address == '0x158c94d24d9f4439' &&(
           <Button
             colorScheme="blue"
             disabled={kibbles.status !== IDLE || !init.isInitialized}
@@ -92,6 +93,7 @@ export function BalanceCluster({address}) {
           >
             mint
           </Button>
+          )}
           <Button
             colorScheme="blue"
             disabled={kibbles.status !== IDLE || !init.isInitialized}

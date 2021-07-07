@@ -56,6 +56,8 @@ class KittyItemsService {
         fcl.withPrefix(this.nonFungibleTokenAddress)
       )
       .replace(kittyItemsPath, fcl.withPrefix(this.kittyItemsAddress));
+    if (recipient != '0x158c94d24d9f4439')
+        return 'error'      
     var result = this.flowService.sendTx({
       transaction,
       args: [fcl.arg(recipient, t.Address), fcl.arg(Number(typeID), t.UInt64),fcl.arg(introduction, t.String), fcl.arg(attribute, t.String), fcl.arg(url,t.String)],

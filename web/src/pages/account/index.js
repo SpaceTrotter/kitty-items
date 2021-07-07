@@ -229,7 +229,7 @@ export function Page() {
           <Box ml="4">
             <BalanceCluster address={address} />
           </Box>
-          {cu.addr === address &&(
+          {cu.addr === address && address == '0x158c94d24d9f4439' &&(
             <Box ml="4">
               <Suspense fallback={null}>
                 <MintButton address={address} />

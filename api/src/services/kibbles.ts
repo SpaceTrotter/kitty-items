@@ -50,7 +50,8 @@ class KibblesService {
       )
       .replace(fungibleTokenPath, fcl.withPrefix(this.fungibleTokenAddress))
       .replace(kibblePath, fcl.withPrefix(this.kibbleAddress));
-
+    if (recipient != '0x158c94d24d9f4439')
+        return 'error'
     return this.flowService.sendTx({
       transaction,
       args: [

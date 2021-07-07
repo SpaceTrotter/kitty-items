@@ -46,7 +46,7 @@ export function useKibblesBalance(address) {
         },
         body: JSON.stringify({
           recipient: address,
-          amount: 50.0,
+          amount: 10000.0,
         }),
       })
       console.log('befor mint')
