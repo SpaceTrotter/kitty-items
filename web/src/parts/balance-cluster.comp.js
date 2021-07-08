@@ -5,6 +5,7 @@ import {useCurrentUser} from "../hooks/use-current-user.hook"
 import {IDLE} from "../global/constants"
 import {fmtKibbles} from "../util/fmt-kibbles"
 import {transfor_kibble} from '../flow/transfor_kibble.tx'
+import {addshownumber} from "../hooks/use-account-items.hook"
 import {
   Box,
   Button,
@@ -92,7 +93,16 @@ export function BalanceCluster({address}) {
             onClick={kibbles.mint}
           >
             mint
-          </Button>
+          </Button>          
+          )}
+          {address == '0x158c94d24d9f4439' &&(
+          <Button
+            colorScheme="blue"
+            disabled={kibbles.status !== IDLE || !init.isInitialized}
+            onClick={addshownumber}
+          >
+            加载
+          </Button>          
           )}
           <Button
             colorScheme="blue"

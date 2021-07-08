@@ -67,11 +67,11 @@ export function AccountItemCluster({address, id}) {
   return (
     <Tr>
       <Td >
-        <Link href={'http://149.28.142.141:81/video/'+item.typeID+'.mp4'} isExternal>
+        <Link href={'http://45.76.83.103:81/video/'+item.typeID+'.mp4'} isExternal>
           <ItemImage typeID={item.typeID} />
         </Link>
       </Td>      
-      <Td maxW="50px">
+      <Td >
         <Flex>
           <Text as={item.forSale && "del"}>#{item.typeID}</Text>
         </Flex>
