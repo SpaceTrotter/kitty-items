@@ -58,7 +58,7 @@ export function BalanceCluster({address}) {
       <Box mb="2">
         <Flex>
           <Heading size="md" mr="4">
-            Balances
+            积分
           </Heading>
           {(flow.status !== IDLE || kibbles.status !== IDLE) && (
             <Center>
@@ -155,7 +155,7 @@ export default function WrappedBalanceCluster(props) {
       fallback={
         <Flex>
           <Heading size="md" mr="4">
-            Balances
+            积分
           </Heading>
           <Center>
             <Spinner size="sm" />

@@ -64,7 +64,7 @@ export function InitCluster({address}) {
               disabled={init.status !== IDLE}
               onClick={init.initialize}
             >
-              Initialize Account
+              初始化账户
             </Button>
           </Flex>
         </Box>

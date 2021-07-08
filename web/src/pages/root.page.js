@@ -31,10 +31,10 @@ export function Page() {
           </Center>
           <Spacer />
           <Button mr="4" colorScheme="blue" onClick={logIn}>
-            Log In
+            登录 
           </Button>
           <Button mr="4" colorScheme="blue" onClick={signUp}>
-            Sign Up
+            注册
           </Button>
         </Flex>
       </Box>
