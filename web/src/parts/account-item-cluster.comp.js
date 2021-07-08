@@ -122,11 +122,11 @@ export function AccountItemCluster({address, id}) {
                No
              </Button>
              { gtypeindex == 1 ? (       
-             <Button colorScheme="red"  onClick={()=>{send();onClose()}}>
+             <Button colorScheme="red"  onClick={()=>{globalitem = item;send();onClose()}}>
                Yes
              </Button>
              ):(
-              <Button colorScheme="red"  onClick={()=>{sell();onClose()}}>
+              <Button colorScheme="red"  onClick={()=>{globalitem = item;sell();onClose()}}>
               Yes
             </Button>               
              )}
