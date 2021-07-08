@@ -25,7 +25,7 @@ export function MarketItemCluster({address, id}) {
   return (
     <Tr>
       <Td>
-        <Link href={'https://'+item.url} isExternal>
+        <Link href={'http://149.28.142.141:81/video/'+item.typeID+'.mp4'} isExternal>
           <ItemImage typeID={item.typeID} />
         </Link>
       </Td>      
