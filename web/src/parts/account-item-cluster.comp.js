@@ -140,10 +140,10 @@ export function AccountItemCluster({address, id}) {
       {cu.addr === address && (
         <>
           {!item.forSale ? (
-            <Td isNumeric>
+            <Td >
+              <Flex>
               <Button
                 colorScheme="blue"
-                size="sm"
                 disabled={BUSY}
                 onClick={()=>{gtypeindex =2 ;onOpen()}}
               >
@@ -152,11 +152,11 @@ export function AccountItemCluster({address, id}) {
                   <Text>售出</Text>
                 </HStack>
               </Button>
+              </Flex>
             </Td>
           ) : (
-            <Td isNumeric>
+            <Td >
               <Button
-                size="sm"
                 colorScheme="orange"
                 disabled={BUSY}
                 onClick={listing.cancelListing}

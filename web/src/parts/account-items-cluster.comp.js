@@ -19,7 +19,7 @@ export function AccountItemsCluster({address}) {
 
   return (
     <flexbox borderWidth="1px" borderRadius="lg">
-      <Table size="sm"  border="0" cellpadding="0" cellspacing="0" width="40%" >
+      <Table size="sm"  border="0" cellpadding="0" cellspacing="0" width="100%" >
          
         <Thead>
           <Tr>
@@ -27,6 +27,8 @@ export function AccountItemsCluster({address}) {
             <Th>id</Th>
             <Th>简介</Th>
             <Th>属性</Th>
+            <Th>发送</Th>
+            <Th>出售</Th>
             {cu.addr === address && <Th />}
           </Tr>
         </Thead>
