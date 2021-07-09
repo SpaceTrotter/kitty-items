@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/onflow/kitty-items/issues"
   },
-  "homepage": "https://github.com/onflow/kitty-items#readme"
+  "homepage": "https://github.com/onflow/kitty-items#readme",
+  "dependencies": {
+
+  }
 }

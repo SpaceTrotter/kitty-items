@@ -2,7 +2,7 @@ import {Suspense} from "react"
 import {useAccountItems} from "../hooks/use-account-items.hook"
 import {useCurrentUser} from "../hooks/use-current-user.hook"
 import Item from "./account-item-cluster.comp"
-import {Box, Table, Thead, Tbody, Tr, Th, Text, Spinner} from "@chakra-ui/react"
+import {Box, Table, Thead, Tbody, Tr, Th, Text, Spinner,flexbox} from "@chakra-ui/react"
 export var aitems = 0
 export function AccountItemsCluster({address}) {
   const items = useAccountItems(address)
@@ -18,9 +18,9 @@ export function AccountItemsCluster({address}) {
     )
 
   return (
-    <Box borderWidth="1px" borderRadius="lg">
-      <Table size="sm">
-        
+    <flexbox borderWidth="1px" borderRadius="lg">
+      <Table size="sm"  border="0" cellpadding="0" cellspacing="0" width="40%" >
+         
         <Thead>
           <Tr>
             <Th>图片</Th>
@@ -36,7 +36,7 @@ export function AccountItemsCluster({address}) {
           ))}
         </Tbody>
       </Table>
-    </Box>
+    </flexbox>
   )
 }
 

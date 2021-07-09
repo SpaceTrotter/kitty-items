@@ -76,9 +76,10 @@ export function AccountItemCluster({address, id}) {
           <Text as={item.forSale && "del"}>#{item.typeID}</Text>
         </Flex>
       </Td>
-      <Td>({item.introduction})</Td>
-      <Td>({item.attribute})</Td>
+      <Td><Flex>({item.introduction})</Flex></Td>
+      <Td><Flex>({item.attribute})</Flex></Td>
       <Td>
+      <Flex>
         <Button
             colorScheme="blue"
             onClick={()=>{gtypeindex =1 ;onOpen()}}
@@ -86,7 +87,7 @@ export function AccountItemCluster({address, id}) {
           >
             发送
         </Button>
-
+      </Flex>
         <AlertDialog
              motionPreset="slideInBottom"
              leastDestructiveRef={cancelRef}
