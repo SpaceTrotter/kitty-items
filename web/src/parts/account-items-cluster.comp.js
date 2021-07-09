@@ -18,8 +18,8 @@ export function AccountItemsCluster({address}) {
     )
 
   return (
-    <flexbox borderWidth="1px" borderRadius="lg">
-      <Table size="sm"  border="0" cellpadding="0" cellspacing="0" width="100%" >
+    <flexbox borderWidth="0px" borderRadius="sm" padding = '0'>
+      <Table size="sm"  border="0" cellpadding="0" cellspacing="0" width="100%" margin = '0' padding = '0' >
          
         <Thead>
           <Tr>
@@ -32,7 +32,7 @@ export function AccountItemsCluster({address}) {
             {cu.addr === address && <Th />}
           </Tr>
         </Thead>
-        <Tbody>
+        <Tbody >
           {items.ids.map(id => (
             <Item key={id} id={id} address={address} />
           ))}

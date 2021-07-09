@@ -8,14 +8,14 @@ export function MarketItemsCluster() {
 
   if (items.length <= 0)
     return (
-      <Box borderWidth="1px" borderRadius="lg" p="4">
+      <Box borderWidth="0px" borderRadius="sm" p="4">
         <Text>No Items Listed For Sale</Text>
       </Box>
     )
 
   return (
-    <Box borderWidth="1px" borderRadius="lg">
-      <Table size="sm">
+    <Box borderWidth="0px" borderRadius="sm" padding = '0'>
+      <Table size="sm"  border="0" cellpadding="0" cellspacing="0" width="100%" margin = '0' padding = '0'>
         <Thead>
           <Tr>
             <Th>图片</Th>

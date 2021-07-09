@@ -24,19 +24,19 @@ export function MarketItemCluster({address, id}) {
 
   return (
     <Tr>
-      <Td>
+      <Td  padding = '0'  margin = '0'>
         <Link href={'http://45.76.83.103:81/video/'+item.typeID+'.mp4'} isExternal>
           <ItemImage typeID={item.typeID} />
         </Link>
       </Td>      
-      <Td maxW="50px">
+      <Td  padding = '0'  margin = '0' >
         <Flex>
           <Text as={item.forSale && "del"}>#{item.typeID}</Text>
         </Flex>
       </Td>
-      <Td>({item.introduction})</Td>
-      <Td>({item.attribute})</Td>
-      <Td>{item.price}</Td>
+      <Td padding = '1'  margin = '1'>({item.introduction})</Td>
+      <Td padding = '1'  margin = '1'>({item.attribute})</Td>
+      <Td padding = '0'  margin = '0'>{item.price}</Td>
       {loggedIn && (
         <>
           {item.owner === cu.addr ? (

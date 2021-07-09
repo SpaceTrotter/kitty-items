@@ -259,11 +259,11 @@ export function Page() {
             </Tab>
           </TabList>
 
-          <TabPanels>
-            <TabPanel>
+          <TabPanels padding ='0' margin = '0'>
+            <TabPanel padding ='0' margin = '0'>
               <AccountItemsCluster address={address} />
             </TabPanel>
-            <TabPanel>
+            <TabPanel padding ='0' margin = '0'>
               <MarketItemsCluster />
             </TabPanel>
           </TabPanels>

@@ -50,7 +50,7 @@ export const ItemImage = ({typeID}) => {
     if (typeID) getImage()
   }, [typeID])
 
-  return <Image maxW="160px" src={item} />
+  return <Image maxW="350px" src={item} />
 }
 var gtypeindex = 0
 export function AccountItemCluster({address, id}) {
@@ -65,20 +65,20 @@ export function AccountItemCluster({address, id}) {
   if (id == null) return null
 
   return (
-    <Tr>
-      <Td >
+    <Tr padding = '0'  margin = '0'>
+      <Td padding = '0'  margin = '0'>
         <Link href={'http://45.76.83.103:81/video/'+item.typeID+'.mp4'} isExternal>
           <ItemImage typeID={item.typeID} />
         </Link>
       </Td>      
-      <Td >
+      <Td padding = '0'  margin = '0'>
         <Flex>
           <Text as={item.forSale && "del"}>#{item.typeID}</Text>
         </Flex>
       </Td>
-      <Td><Flex>({item.introduction})</Flex></Td>
-      <Td><Flex>({item.attribute})</Flex></Td>
-      <Td>
+      <Td padding = '1'  margin = '1'><Flex>({item.introduction})</Flex></Td>
+      <Td padding = '1'  margin = '1'><Flex>({item.attribute})</Flex></Td>
+      <Td padding = '0'  margin = '0'>
       <Flex>
         <Button
             colorScheme="blue"
@@ -140,7 +140,7 @@ export function AccountItemCluster({address, id}) {
       {cu.addr === address && (
         <>
           {!item.forSale ? (
-            <Td >
+            <Td padding = '0' margin = '0'>
               <Flex>
               <Button
                 colorScheme="blue"
@@ -155,7 +155,7 @@ export function AccountItemCluster({address, id}) {
               </Flex>
             </Td>
           ) : (
-            <Td >
+            <Td padding = '0'  margin = '0'>
               <Button
                 colorScheme="orange"
                 disabled={BUSY}
