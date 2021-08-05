@@ -21,23 +21,30 @@ export function Page() {
 
   return (
     <Base>
-      <Box p="4">
+      <Box >
+        <Center mt="30px">
         <Flex>
-          <Center mr="4">
+          
             <HStack>
-              <Image src={Logo} />
-              <Heading size="lg">和田玉2.0NFT</Heading>
+              <Heading size="4xl">和田玉2.0NFT</Heading>
             </HStack>
-          </Center>
+         
           <Spacer />
-          <Button mr="4" colorScheme="blue" onClick={logIn}>
+
+        </Flex>
+        </Center>        
+      </Box>
+
+      <Box >
+      <Center mr="4" mt="500px">
+          <Button mr="15" size ='lg' colorScheme="blue" onClick={logIn}>
             登录 
           </Button>
-          <Button mr="4" colorScheme="blue" onClick={signUp}>
+          <Button mr="15" size ='lg' colorScheme="blue" onClick={signUp}>
             注册
-          </Button>
-        </Flex>
-      </Box>
+          </Button>   
+      </Center>  
+      </Box> 
     </Base>
   )
 }

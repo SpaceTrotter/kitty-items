@@ -1,0 +1,149 @@
+
+> kitty-items@1.0.0 start:testnet /mnt/e/kitty-items
+> ./scripts/run-testnet.sh
+
+lerna notice cli v4.0.0
+lerna info Executing command in 2 packages: "npm run testnet"
+kitty-items-api: > kitty-items-api@0.0.1 testnet /mnt/e/kitty-items/api
+kitty-items-api: > tsnd --respawn src/index.ts --dev
+kitty-items-web: > kitty-items-web@0.1.0 testnet /mnt/e/kitty-items/web
+kitty-items-web: > export PORT=3001 && react-scripts start
+kitty-items-api: [INFO] 22:55:31 ts-node-dev ver. 1.1.1 (using ts-node ver. 9.1.1, typescript ver. 4.1.2)
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.136.145/
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /mnt/e/kitty-items/web/public
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+kitty-items-web: Starting the development server...
+kitty-items-api: fetching latest block height
+kitty-items-api: Listening on port 3000!
+kitty-items-api: latestBlockHeight = 37780668
+kitty-items-api: fromBlock=37780451 toBlock=37780651 latestBlock=37780668
+kitty-items-api: fromBlock=37779308 toBlock=37779508 latestBlock=37780668
+kitty-items-web: Compiled with warnings.
+kitty-items-web: src/flow/transfor_kibble.tx.js
+kitty-items-web:   Line 5:9:   'send' is defined but never used            no-unused-vars
+kitty-items-web:   Line 5:15:  'decode' is defined but never used          no-unused-vars
+kitty-items-web:   Line 5:23:  'script' is defined but never used          no-unused-vars
+kitty-items-web:   Line 5:31:  'args' is defined but never used            no-unused-vars
+kitty-items-web:   Line 5:37:  'arg' is defined but never used             no-unused-vars
+kitty-items-web:   Line 6:9:   'Address' is defined but never used         no-unused-vars
+kitty-items-web:   Line 7:9:   'transaction' is defined but never used     no-unused-vars
+kitty-items-web:   Line 7:22:  'limit' is defined but never used           no-unused-vars
+kitty-items-web:   Line 7:29:  'proposer' is defined but never used        no-unused-vars
+kitty-items-web:   Line 7:39:  'payer' is defined but never used           no-unused-vars
+kitty-items-web:   Line 7:46:  'authorizations' is defined but never used  no-unused-vars
+kitty-items-web:   Line 7:62:  'authz' is defined but never used           no-unused-vars
+kitty-items-web:   Line 8:9:   'invariant' is defined but never used       no-unused-vars
+kitty-items-web: src/hooks/use-market-item.hook.js
+kitty-items-web:   Line 45:6:  React Hook useEffect has missing dependencies: 'key' and 'setItem'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+kitty-items-web: src/pages/account/index.js
+kitty-items-web:   Line 43:3:  'useState' is defined but never used  no-unused-vars
+kitty-items-web: src/parts/account-item-cluster.comp.js
+kitty-items-web:   Line 6:9:     'globalsetItems' is defined but never used     no-unused-vars
+kitty-items-web:   Line 6:24:    'fetchAccountItems' is defined but never used  no-unused-vars
+kitty-items-web:   Line 106:22:  Expected '===' and instead saw '=='            eqeqeq
+kitty-items-web:   Line 124:27:  Expected '===' and instead saw '=='            eqeqeq
+kitty-items-web: src/parts/balance-cluster.comp.js
+kitty-items-web:   Line 28:3:   'useState' is defined but never used        no-unused-vars
+kitty-items-web:   Line 32:16:  'sendtokenlocal' is defined but never used  no-unused-vars
+kitty-items-web:   Line 38:5:   'globalkibbles' is already defined          no-redeclare
+kitty-items-web: Search for the keywords to learn more about each warning.
+kitty-items-web: To ignore, add // eslint-disable-next-line to the line before.
+kitty-items-api: [saleOfferWorker] saw [Kitty Items] event: {
+kitty-items-api:   blockId: '3b0eeac9aaa4b115a5940cac93b12f2813e8c8b8ba857c7fb46a1ed24348d0f8',
+kitty-items-api:   blockHeight: 37780592,
+kitty-items-api:   blockTimestamp: '2021-07-06T14:54:35.602Z',
+kitty-items-api:   type: 'A.93eec92d1869b241.KittyItemsMarket.CollectionInsertedSaleOffer',
+kitty-items-api:   transactionId: 'd3e66ab7405b7bc1cb91903ff9360de3ad6284324d5ca960fba560b89715da4a',
+kitty-items-api:   transactionIndex: 0,
+kitty-items-api:   eventIndex: 2,
+kitty-items-api:   data: {
+kitty-items-api:     itemID: 0,
+kitty-items-api:     typeID: 1,
+kitty-items-api:     introduction: 'test',
+kitty-items-api:     attribute: 'test',
+kitty-items-api:     url: 'www.baidu.com',
+kitty-items-api:     owner: '0x158c94d24d9f4439',
+kitty-items-api:     price: '10.00000000'
+kitty-items-api:   }
+kitty-items-api: }
+kitty-items-api: fromBlock=37780651 toBlock=37780681 latestBlock=37780681
+kitty-items-api: fromBlock=37780681 toBlock=37780691 latestBlock=37780691
+./scripts/run-testnet.sh: line 13:   342 Killed                  lerna run testnet --parallel --concurrency 4
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! kitty-items@1.0.0 start:testnet: `./scripts/run-testnet.sh`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the kitty-items@1.0.0 start:testnet script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/spacetrotter/.npm/_logs/2021-07-06T14_59_02_644Z-debug.log
+
+> kitty-items@1.0.0 start:testnet /mnt/e/kitty-items
+> ./scripts/run-testnet.sh
+
+lerna notice cli v4.0.0
+lerna info Executing command in 2 packages: "npm run testnet"
+kitty-items-api: > kitty-items-api@0.0.1 testnet /mnt/e/kitty-items/api
+kitty-items-api: > tsnd --respawn src/index.ts --dev
+kitty-items-web: > kitty-items-web@0.1.0 testnet /mnt/e/kitty-items/web
+kitty-items-web: > export PORT=3001 && react-scripts start
+kitty-items-api: [INFO] 23:12:54 ts-node-dev ver. 1.1.1 (using ts-node ver. 9.1.1, typescript ver. 4.1.2)
+kitty-items-api: fetching latest block height
+kitty-items-api: Listening on port 3000!
+kitty-items-api: latestBlockHeight = 37781981
+kitty-items-api: fromBlock=37779508 toBlock=37779708 latestBlock=37781981
+kitty-items-api: fromBlock=37780681 toBlock=37780881 latestBlock=37781989
+kitty-items-api: fromBlock=37779708 toBlock=37779908 latestBlock=37781998
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.136.145/
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /mnt/e/kitty-items/web/public
+kitty-items-web: [34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+kitty-items-web: Starting the development server...
+kitty-items-api: fromBlock=37779908 toBlock=37780108 latestBlock=37782010
+kitty-items-api: fromBlock=37780108 toBlock=37780308 latestBlock=37782027
+kitty-items-api: fromBlock=37780308 toBlock=37780508 latestBlock=37782032
+kitty-items-api: in mint
+kitty-items-web: Compiled with warnings.
+kitty-items-web: src/flow/transfor_kibble.tx.js
+kitty-items-web:   Line 5:9:   'send' is defined but never used            no-unused-vars
+kitty-items-web:   Line 5:15:  'decode' is defined but never used          no-unused-vars
+kitty-items-web:   Line 5:23:  'script' is defined but never used          no-unused-vars
+kitty-items-web:   Line 5:31:  'args' is defined but never used            no-unused-vars
+kitty-items-web:   Line 5:37:  'arg' is defined but never used             no-unused-vars
+kitty-items-web:   Line 6:9:   'Address' is defined but never used         no-unused-vars
+kitty-items-web:   Line 7:9:   'transaction' is defined but never used     no-unused-vars
+kitty-items-web:   Line 7:22:  'limit' is defined but never used           no-unused-vars
+kitty-items-web:   Line 7:29:  'proposer' is defined but never used        no-unused-vars
+kitty-items-web:   Line 7:39:  'payer' is defined but never used           no-unused-vars
+kitty-items-web:   Line 7:46:  'authorizations' is defined but never used  no-unused-vars
+kitty-items-web:   Line 7:62:  'authz' is defined but never used           no-unused-vars
+kitty-items-web:   Line 8:9:   'invariant' is defined but never used       no-unused-vars
+kitty-items-web: src/hooks/use-market-item.hook.js
+kitty-items-web:   Line 45:6:  React Hook useEffect has missing dependencies: 'key' and 'setItem'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+kitty-items-web: src/pages/account/index.js
+kitty-items-web:   Line 43:3:  'useState' is defined but never used  no-unused-vars
+kitty-items-web: src/parts/account-item-cluster.comp.js
+kitty-items-web:   Line 6:9:     'globalsetItems' is defined but never used     no-unused-vars
+kitty-items-web:   Line 6:24:    'fetchAccountItems' is defined but never used  no-unused-vars
+kitty-items-web:   Line 106:22:  Expected '===' and instead saw '=='            eqeqeq
+kitty-items-web:   Line 124:27:  Expected '===' and instead saw '=='            eqeqeq
+kitty-items-web: src/parts/balance-cluster.comp.js
+kitty-items-web:   Line 28:3:   'useState' is defined but never used        no-unused-vars
+kitty-items-web:   Line 32:16:  'sendtokenlocal' is defined but never used  no-unused-vars
+kitty-items-web:   Line 38:5:   'globalkibbles' is already defined          no-redeclare
+kitty-items-web: Search for the keywords to learn more about each warning.
+kitty-items-web: To ignore, add // eslint-disable-next-line to the line before.
+./scripts/run-testnet.sh: line 13:   524 Killed                  lerna run testnet --parallel --concurrency 4
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! kitty-items@1.0.0 start:testnet: `./scripts/run-testnet.sh`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the kitty-items@1.0.0 start:testnet script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/spacetrotter/.npm/_logs/2021-07-06T15_15_31_451Z-debug.log
