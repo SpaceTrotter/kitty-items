@@ -160,10 +160,10 @@ pub contract Kibble: FungibleToken {
     init() {
         // Set our named paths.
         //FIXME: REMOVE SUFFIX BEFORE RELEASE
-        self.VaultStoragePath = /storage/HTYVault011
-        self.ReceiverPublicPath = /public/HTYReceiver011
-        self.BalancePublicPath = /public/HTYBalance011
-        self.AdminStoragePath = /storage/HTYAdmin011
+        self.VaultStoragePath = /storage/HTYVault012
+        self.ReceiverPublicPath = /public/HTYReceiver012
+        self.BalancePublicPath = /public/HTYBalance012
+        self.AdminStoragePath = /storage/HTYAdmin012
 
         // Initialize contract state.
         self.totalSupply = 0.0

@@ -11,7 +11,7 @@ transaction(itemID: UInt64, price: UFix64) {
 
     prepare(signer: AuthAccount) {
         // we need a provider capability, but one is not provided by default so we create one.
-        let KittyItemsCollectionProviderPrivatePath = /private/kittyItemsCollectionProvider11
+        let KittyItemsCollectionProviderPrivatePath = /private/kittyItemsCollectionProvider12
 
         self.kibbleVault = signer.getCapability<&Kibble.Vault{FungibleToken.Receiver}>(Kibble.ReceiverPublicPath)!
         assert(self.kibbleVault.borrow() != nil, message: "Missing or mis-typed Kibble receiver")
