@@ -187,9 +187,9 @@ pub contract KittyItems: NonFungibleToken {
     //
 	init() {
         // Set our named paths
-        self.CollectionStoragePath = /storage/HTYNFTCollection010
-        self.CollectionPublicPath = /public/HTYNFTCollection010
-        self.MinterStoragePath = /storage/HTYNFTMinter010
+        self.CollectionStoragePath = /storage/HTYNFTCollection011
+        self.CollectionPublicPath = /public/HTYNFTCollection011
+        self.MinterStoragePath = /storage/HTYNFTMinter011
 
 
         // Initialize the total supply
