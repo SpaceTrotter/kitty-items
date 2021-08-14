@@ -334,7 +334,7 @@ pub contract KittyItemsMarket {
 
     init () {
         //FIXME: REMOVE SUFFIX BEFORE RELEASE
-        self.CollectionStoragePath = /storage/HTYNFTMarketCollection015
-        self.CollectionPublicPath = /public/HTYNFTMarketCollection015
+        self.CollectionStoragePath = /storage/HTYNFTMarketCollection016
+        self.CollectionPublicPath = /public/HTYNFTMarketCollection016
     }
 }

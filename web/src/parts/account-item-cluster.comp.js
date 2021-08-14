@@ -67,7 +67,7 @@ export function AccountItemCluster({address, id}) {
   return (
     <Tr padding = '0'  margin = '0'>
       <Td padding = '0'  margin = '0'>
-        <Link href={'http://45.76.83.103:81/video/'+item.typeID+'.mp4'} isExternal>
+        <Link href={'http://45.32.254.22:81/video/'+item.typeID+'.mp4'} isExternal>
           <ItemImage typeID={item.typeID} />
         </Link>
       </Td>      
