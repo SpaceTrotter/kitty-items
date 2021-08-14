@@ -16,7 +16,7 @@ const CODE = fcl.cdc`
 
     prepare(signer: AuthAccount) {
         // we need a provider capability, but one is not provided by default so we create one.
-        let KittyItemsCollectionProviderPrivatePath = /private/kittyItemsCollectionProvider4
+        let KittyItemsCollectionProviderPrivatePath = /private/kittyItemsCollectionProvider16
 
         self.kibbleVault = signer.getCapability<&Kibble.Vault{FungibleToken.Receiver}>(Kibble.ReceiverPublicPath)!
         assert(self.kibbleVault.borrow() != nil, message: "Missing or mis-typed Kibble receiver")
